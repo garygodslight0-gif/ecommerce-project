@@ -1,6 +1,8 @@
 import './checkout.css'
 function Checkout() {
   return (<>
+
+   <title>Checkout</title>
         <div class="checkout-header">
       <div class="header-content">
         <div class="checkout-header-left-section">
