@@ -1,8 +1,8 @@
 
 import {Routes, Route }from 'react-router';
+import Homepage from './components/HomePage';
 import'./App.css';
 
-import Homepage from './components/HomePage';
 function App(){
 return (
     <Routes>
