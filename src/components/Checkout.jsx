@@ -1,3 +1,4 @@
+import './checkout-header.css'
 import './checkout.css'
 function Checkout() {
   return (<>

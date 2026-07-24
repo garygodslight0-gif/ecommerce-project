@@ -1,4 +1,6 @@
+
 import Header from "./Header"
+import './tracking.css'
 function Tracking(){
    return ( <>
       <title>Tracking</title>
