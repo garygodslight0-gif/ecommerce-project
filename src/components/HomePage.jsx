@@ -1,6 +1,6 @@
 
 function Homepage(){
-<>
+return ( <>
     <div className="header">
       <div className="left-section">
         <a href="index.html" className="header-link">
@@ -183,6 +183,6 @@ function Homepage(){
         </div>
       </div>
     </div>
-</>
+</>)
 }
 export default Homepage
