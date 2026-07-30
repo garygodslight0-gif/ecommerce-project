@@ -1,7 +1,10 @@
 
 import { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
- 
+import {  NavLink } from "react-router-dom"
+import LogoWhite from "../assets/images/logo-white.png"
+import Logo from "../assets/images/logo.png"
+import SearchIcon from "../assets/images/icons/search-icon.png"  
+
 function Header() {
     
     return(
@@ -11,9 +14,9 @@ function Header() {
         <NavLink to ="/" className="header-link">
 
           <img className="logo"
-            src="/images/logo-white.png" />
+            src={Logo} />
           <img className="mobile-logo"
-            src="/images/mobile-logo-white.png" />
+            src={LogoWhite} />
 
         </NavLink>
       </div>
@@ -22,7 +25,7 @@ function Header() {
         <input className="search-bar" type="text" placeholder="Search" />
 
         <button className="search-button">
-          <img className="search-icon" src=".../assets/icons/search-icon.png" />
+          <img className="search-icon" src="../assets/icons/search-icon.png" />
         </button>
       </div>
 
