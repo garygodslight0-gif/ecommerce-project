@@ -11,9 +11,9 @@ function Header() {
         <NavLink to ="/" className="header-link">
 
           <img className="logo"
-            src="images/logo-white.png" />
+            src="/images/logo-white.png" />
           <img className="mobile-logo"
-            src="images/mobile-logo-white.png" />
+            src="/images/mobile-logo-white.png" />
 
         </NavLink>
       </div>
@@ -22,7 +22,7 @@ function Header() {
         <input className="search-bar" type="text" placeholder="Search" />
 
         <button className="search-button">
-          <img className="search-icon" src="images/icons/search-icon.png" />
+          <img className="search-icon" src=".../assets/icons/search-icon.png" />
         </button>
       </div>
 
