@@ -1,12 +1,16 @@
 import Header from "./Header"
-import axios, { Axios } from "axios"
-import {products} from '../../starting code/data/products'
+import axios from "axios"
+
+import { useEffect, useState } from "react"
 
 function Homepage(){
+  const [products, setProducts] = useState([])
 
-axios.get("http://localhost:3000/api/products").then(
- (product)=>{console.log(product.data)}
-)
+useEffect(() => {
+  axios.get("http://localhost:3000/api/products").then(
+    (product)=>{setProducts(product.data)}
+  )
+}, [])
 
 return ( <>
 
@@ -15,9 +19,10 @@ return ( <>
       <div className="products-grid">
 
 
-        {products.map((product) => (  <div className="product-container">
+        {products.map((product) => (  <div className="product-container"
+       key={product.id} >
           <div className="product-image-container"
-           key={product.id}>
+           >
             <img className="product-image"
               src={product.image} />
           </div>
