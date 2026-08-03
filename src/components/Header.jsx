@@ -14,7 +14,8 @@ function Header() {
       <div className="left-section">
         <NavLink to ="/" className="header-link">
 
-         
+          <img className="logo"
+            src={Logo} />
           <img className="mobile-logo"
             src={LogoWhite} />
 
