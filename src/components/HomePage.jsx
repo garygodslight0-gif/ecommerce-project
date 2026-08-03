@@ -1,11 +1,15 @@
 import Header from "./Header"
+import axios from "axios"
 import {products} from '../../starting code/data/products'
+
 function Homepage(){
 
 return ( <>
    <Header/>
     <div className="home-page">
       <div className="products-grid">
+a
+
         {products.map((product) => (  <div className="product-container">
           <div className="product-image-container"
            key={product.id}>
