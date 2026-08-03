@@ -4,6 +4,7 @@ import {  NavLink } from "react-router-dom"
 import LogoWhite from "../assets/images/logo-white.png"
 import Logo from "../assets/images/logo.png"
 import SearchIcon from "../assets/images/icons/search-icon.png"  
+import Cart from "../assets/images/icons/cart-icon.png"
 
 function Header() {
     
@@ -13,8 +14,7 @@ function Header() {
       <div className="left-section">
         <NavLink to ="/" className="header-link">
 
-          <img className="logo"
-            src={Logo} />
+         
           <img className="mobile-logo"
             src={LogoWhite} />
 
@@ -25,7 +25,7 @@ function Header() {
         <input className="search-bar" type="text" placeholder="Search" />
 
         <button className="search-button">
-          <img className="search-icon" src="../assets/icons/search-icon.png" />
+          <img className="search-icon" src={SearchIcon} />
         </button>
       </div>
 
@@ -36,7 +36,7 @@ function Header() {
         </NavLink>
 
         <NavLink className="cart-link header-link" to ="/checkout">
-          <img className="cart-icon" src="../assets/icons/cart-icon.png" />
+          <img className="cart-icon" src={Cart} />
           <div className="cart-quantity">3</div>
           <div className="cart-text">Cart</div>
         </NavLink>
