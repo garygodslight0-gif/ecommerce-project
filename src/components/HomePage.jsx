@@ -1,14 +1,19 @@
 import Header from "./Header"
-import axios from "axios"
+import axios, { Axios } from "axios"
 import {products} from '../../starting code/data/products'
 
 function Homepage(){
 
+axios.get("http://localhost:3000/api/products").then(
+ (product)=>{console.log(product.data)}
+)
+
 return ( <>
+
    <Header/>
     <div className="home-page">
       <div className="products-grid">
-a
+
 
         {products.map((product) => (  <div className="product-container">
           <div className="product-image-container"
