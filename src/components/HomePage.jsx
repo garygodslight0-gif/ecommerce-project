@@ -8,12 +8,11 @@ function Homepage(){
   const[items, setItems] = useState([])
 
 useEffect(() => {
-  axios.get("http://localhost:3000/api/products").then(
+  axios.get("/api/products").then(
     (product)=>{setProducts(product.data)}
   )
-}, [])
-axios.get("http://localhost:3000/api/cart-items").then((response)=>{setItems(response.data)})
-
+}, [])  
+axios.get("/api/cart-items").then((response)=>{setItems(response.data)})
 return ( <>
 
    <Header items = {items}/>
