@@ -6,8 +6,12 @@ import Logo from "../assets/images/logo.png"
 import SearchIcon from "../assets/images/icons/search-icon.png"  
 import Cart from "../assets/images/icons/cart-icon.png"
 
-function Header() {
-    
+function Header({ items }) {
+  let totalQuantity = 0;
+  items.forEach((item) => {
+    totalQuantity += item.quantity
+  })
+
     return(
         <>
          <div className="header">
@@ -38,7 +42,7 @@ function Header() {
 
         <NavLink className="cart-link header-link" to ="/checkout">
           <img className="cart-icon" src={Cart} />
-          <div className="cart-quantity">3</div>
+          <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
         </NavLink>
       </div>

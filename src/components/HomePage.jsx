@@ -5,16 +5,18 @@ import { useEffect, useState } from "react"
 
 function Homepage(){
   const [products, setProducts] = useState([])
+  const[items, setItems] = useState([])
 
 useEffect(() => {
   axios.get("http://localhost:3000/api/products").then(
     (product)=>{setProducts(product.data)}
   )
 }, [])
+axios.get("http://localhost:3000/api/cart-items").then((response)=>{setItems(response.data)})
 
 return ( <>
 
-   <Header/>
+   <Header items = {items}/>
     <div className="home-page">
       <div className="products-grid">
 
