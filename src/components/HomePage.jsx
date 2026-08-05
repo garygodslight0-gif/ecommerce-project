@@ -3,16 +3,14 @@ import axios from "axios"
 
 import { useEffect, useState } from "react"
 
-function Homepage(){
+function Homepage({items}) {
   const [products, setProducts] = useState([])
-  const[items, setItems] = useState([])
+ 
 
 useEffect(() => {
   axios.get("/api/products").then(
     (product)=>{setProducts(product.data)}
-  )
-}, [])  
-axios.get("/api/cart-items").then((response)=>{setItems(response.data)})
+  )}, [])  
 return ( <>
 
    <Header items = {items}/>
