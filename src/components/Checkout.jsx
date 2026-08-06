@@ -45,10 +45,11 @@ function Checkout({ items }) {
 
         <div className="checkout-grid">
           <div  className="order-summary">
-            {deliveryOptions.lenght > 0 && items.map((item) => {
+            {deliveryOptions.length > 0 && items.map((item) => {
+              console.log(item.product.image)
               const selectedDeliveryOption = deliveryOptions.find(
                 (deliveryOption) => {
-                  return deliveryOption.id === item.deliveryOption.id;
+                  return deliveryOption.id === item.deliveryOptionId;
                 },
               );
               return (
@@ -100,7 +101,7 @@ function Checkout({ items }) {
                             <input
                               type="radio"
                               checked={
-                                deliveryOption.id === item.deliveryOption.id
+                                deliveryOption.id === item.deliveryOptionId
                               }
                               className="delivery-option-input"
                               name={item.productId}
