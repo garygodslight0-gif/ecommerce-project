@@ -1,7 +1,15 @@
-import Header from "./Header"
-import './orders.css'
+import Header from "./Header";
+import './orders.css';
+import { axios } from "axios";
+import { useEffect, useState } from "react";
 import BuyAgainIcon from "../assets/images/icons/buy-again.png"
 function Oders({items}) {
+ const [orders, setOrders] = useState([]);
+ useEffect(() => {
+   axios.get("/api/orders").then((response) => {
+     setOrders(response.data);
+   }); 
+ }, []);b
  return ( <>
  <Header items={items} />
     <div className="orders-page">
