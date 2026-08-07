@@ -18,7 +18,7 @@ return (
         <Route path='/' element={<Homepage items={items}/>}/>
         <Route path='/checkout' element={<Checkout items={items}/>}/>
         <Route path='/orders' element={<Oders items={items}/>}/>
-        <Route path='/tracking' element={<Tracking/>}/>
+        <Route path='/tracking' element={<Tracking items={items}/>}/>
     </Routes>
 
 );

@@ -1,9 +1,9 @@
 import Header from "./Header"
 import './orders.css'
 import BuyAgainIcon from "../assets/images/icons/buy-again.png"
-function Oders(){
+function Oders({items}) {
  return ( <>
- <Header/>
+ <Header items={items} />
     <div className="orders-page">
       <div className="page-title">Your Orders</div>
 
@@ -33,7 +33,7 @@ function Oders(){
               <img src="images/products/athletic-cotton-socks-6-pairs.jpg" />
             </div>
 
-            <div className="product-details">
+            <div className="product-details">   
               <div className="product-name">
                 Black and Gray Athletic Cotton Socks - 6 Pairs
               </div>

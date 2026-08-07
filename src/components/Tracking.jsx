@@ -2,10 +2,10 @@
 import Header from "./Header"
 import './tracking.css'
 import { Link, NavLink } from "react-router-dom"
-function Tracking(){
+function Tracking({items}) {
    return ( <>
       <title>Tracking</title>
-   <Header/>
+   <Header items={items}/>
     <div className="tracking-page">
       <div className="order-tracking">
         <Link className="back-to-orders-link link-primary" to="/orders">
