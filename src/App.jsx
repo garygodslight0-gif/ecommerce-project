@@ -2,7 +2,7 @@
 import {Routes, Route }from 'react-router-dom';
 import Homepage from './components/HomePage';
 import Checkout from './components/Checkout';
-import Oders from './components/Oders';
+import Orders from './components/Oders';
 import Tracking from './components/Tracking';
 import'./App.css';
 import { useState,useEffect } from 'react';
@@ -17,10 +17,10 @@ return (
     <Routes>
         <Route path='/' element={<Homepage items={items}/>}/>
         <Route path='/checkout' element={<Checkout items={items}/>}/>
-        <Route path='/orders' element={<Oders items={items}/>}/>
+        <Route path='/orders' element={<Orders items={items}/>}/>
         <Route path='/tracking' element={<Tracking items={items}/>}/>
     </Routes>
 
 );
 }
-export default App;
+export default App; 

@@ -1,17 +1,17 @@
 import Header from "./Header";
 import './orders.css';
-import { axios } from "axios";
+import  axios  from "axios";
 import { useEffect, useState } from "react";
 import BuyAgainIcon from "../assets/images/icons/buy-again.png"
-function Oders({items}) {
+function Orders({items}) {
  const [orders, setOrders] = useState([]);
  useEffect(() => {
    axios.get("/api/orders").then((response) => {
      setOrders(response.data);
    }); 
- }, []);b
+ }, []);
  return ( <>
- <Header items={items} />
+ <Header items={items} />  
     <div className="orders-page">
       <div className="page-title">Your Orders</div>
 
@@ -150,4 +150,4 @@ function Oders({items}) {
     
     </>)
 }
-export default Oders
+export default Orders
