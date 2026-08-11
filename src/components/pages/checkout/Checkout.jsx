@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./checkout-header.css";
 import "./checkout.css";
-import { formatMoney } from "../utils/Formart-money";
+import { formatMoney } from "../../../utils/Formart-money";
 import dayjs from "dayjs";
 function Checkout({ items }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);

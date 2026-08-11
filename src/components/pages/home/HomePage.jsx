@@ -1,6 +1,6 @@
-import Header from "./Header"
+import Header from "../../Header"
 import axios from "axios"
-import { formatMoney } from "../utils/Formart-money"
+import { formatMoney } from "../../../utils/Formart-money"
 import { useEffect, useState } from "react"
 
 function Homepage({items}) {

@@ -1,9 +1,9 @@
-import Header from "./Header";
+import Header from "../../Header";
 import './orders.css';
 import  axios  from "axios";
 import { useEffect, useState ,Fragment } from "react";
-import BuyAgainIcon from "../assets/images/icons/buy-again.png"
-import { formatMoney } from "../utils/Formart-money";
+import BuyAgainIcon from "../../../assets/images/icons/buy-again.png"
+import { formatMoney } from "../../../utils/Formart-money";
 import dayjs from "dayjs";
 function Orders({items}) {
  const [orders, setOrders] = useState([]);
