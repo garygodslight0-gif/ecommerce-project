@@ -2,7 +2,7 @@
 import {Routes, Route }from 'react-router-dom';
 import Homepage from './components/HomePage';
 import Checkout from './components/Checkout';
-import Orders from './components/Oders';
+import Orders from './components/Orders';
 import Tracking from './components/Tracking';
 import'./App.css';
 import { useState,useEffect } from 'react';
