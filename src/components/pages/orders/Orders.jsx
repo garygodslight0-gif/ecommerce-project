@@ -8,10 +8,14 @@ import dayjs from "dayjs";
 function Orders({items}) {
  const [orders, setOrders] = useState([]);
  useEffect(() => {
-   axios.get("/api/orders?expand=products").then((response) => {
-     setOrders(response.data);
-   }); 
+  const getData = async ()=>{const response = await axios.get("/api/orders?expand=products")
+     setOrders(response.data);}
+   getData();
  }, []);
+
+
+
+
  return ( <>
  <Header items={items} />  
     <div className="orders-page">
