@@ -5,6 +5,7 @@ import { useEffect, useState ,Fragment } from "react";
 import BuyAgainIcon from "../../../assets/images/icons/buy-again.png"
 import { formatMoney } from "../../../utils/Formart-money";
 import dayjs from "dayjs";
+import { Link } from "react-router-dom";
 function Orders({items}) {
  const [orders, setOrders] = useState([]);
  useEffect(() => {
@@ -70,11 +71,11 @@ function Orders({items}) {
             </div>
 
             <div className="product-actions">
-              <a href="/tracking">
+              <Link to={`/tracking/${order.id}/${orderProducts.productId}`}>
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>
-              </a>
+              </Link>
             </div>
 
    

@@ -7,6 +7,7 @@ import Homepage from "./components/pages/home/HomePage";
 import Orders from "./components/pages/orders/Orders";
 import Tracking from "./components/pages/tracking/Tracking";
 
+
 function App() {
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
       <Route path="/" element={<Homepage items={items} />} />
       <Route path="/checkout" element={<Checkout items={items} />} />
       <Route path="/orders" element={<Orders items={items} />} />
-      <Route path="/tracking" element={<Tracking items={items} />} />
+      <Route path="/tracking/:orderId/:productId" element={<Tracking items={items} />} />
     </Routes>
   );
 }

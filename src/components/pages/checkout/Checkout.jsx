@@ -1,22 +1,23 @@
-import { useState, useEffect } from "react";
-import Deliveryoption from './deliveryoption'
 import axios from "axios";
+import { useEffect, useState } from "react";
 import "./checkout-header.css";
 import "./checkout.css";
-import { formatMoney } from "../../../utils/Formart-money";
+import Deliveryoption from "./deliveryoption";
 import PaymentSummary from "./PaymentSummary";
 function Checkout({ items }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
   useEffect(() => {
-    axios
-      .get("/api/delivery-options?expand=estimatedDeliveryTime")
-      .then((response) => {
-        setDeliveryOptions(response.data);
-      });
-    axios.get("/api/payment-summary").then((response)=>{
-      setPaymentSummary(response.data)
-    })
+    const GetData = async () => {
+      const response = await axios.get(
+        "/api/delivery-options?expand=estimatedDeliveryTime",
+      );
+      setDeliveryOptions(response.data);
+      await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
+    };
+
+    GetData();
   }, []);
 
   return (
@@ -48,13 +49,10 @@ function Checkout({ items }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <div  className="order-summary">
-      <Deliveryoption deliveryOptions={deliveryOptions} items={items} />
+          <div className="order-summary">
+            <Deliveryoption deliveryOptions={deliveryOptions} items={items} />
           </div>
-        <PaymentSummary paymentSummary= {paymentSummary} />
-
-          
-         
+          <PaymentSummary paymentSummary={paymentSummary} />
         </div>
       </div>{" "}
     </>
