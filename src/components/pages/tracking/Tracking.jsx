@@ -26,7 +26,10 @@ function Tracking({items}) {
  const orderProduct = order.products.find((product)=>product.productId === productId)
  const totalDeliveryTime = orderProduct.estimatedDeliveryTimeMs-order.orderTimeMs;
  const timePassedMs = dayjs().valueOf() - order.orderTimeMs;
- const progressPercentage = (timePassedMs / totalDeliveryTime) * 100;
+ let progressPercentage = (timePassedMs / totalDeliveryTime) * 100;
+ if (progressPercentage > 100) {
+  progressPercentage = 100;
+ }
  const isPreparing = progressPercentage < 33;
  const isShipped = progressPercentage >= 33 && progressPercentage < 100;
  const isDelivered = progressPercentage === 100;
