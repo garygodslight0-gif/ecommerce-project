@@ -1,7 +1,9 @@
 import axios from "axios"
 import { formatMoney } from "../../../utils/Formart-money"
-function Products ({products}){
-
+import { useState } from "react";
+useState
+function Products ({products ,loadCart }){
+const [quantity, setQuantity] = useState(1);
     return (<>
       {products.map((product) => (  <div className="product-container"
        key={product.id} >
@@ -28,7 +30,12 @@ function Products ({products}){
           </div>
 
           <div className="product-quantity-container">
-            <select>
+            <select
+            value={quantity}
+            onChange={(e)=>{
+              setQuantity(e.target.value)
+            }}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -53,9 +60,11 @@ function Products ({products}){
           onClick={async()=>{
             await axios.post ('/api/cart-items',{
               productId : product.id,
-              quantity : 1
+              quantity : 1,
+             
+               
             });
-
+           await loadCart();
           }}
           >
             Add to Cart

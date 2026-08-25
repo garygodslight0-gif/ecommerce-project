@@ -4,20 +4,12 @@ import "./checkout-header.css";
 import "./checkout.css";
 import Deliveryoption from "./deliveryoption";
 import PaymentSummary from "./PaymentSummary";
-function Checkout({ items }) {
-  const [deliveryOptions, setDeliveryOptions] = useState([]);
-  const [paymentSummary, setPaymentSummary] = useState(null);
-  useEffect(() => {
-    const GetData = async () => {
-      const response = await axios.get(
-        "/api/delivery-options?expand=estimatedDeliveryTime",
-      );
-      setDeliveryOptions(response.data);
-      await axios.get("/api/payment-summary");
-      setPaymentSummary(response.data);
-    };
 
-    GetData();
+ 
+function Checkout({ items , deliveryOptions, paymentSummary, loadCart }) {
+ 
+  useEffect(() => {
+    loadCart();
   }, []);
 
   return (

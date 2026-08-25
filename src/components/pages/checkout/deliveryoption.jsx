@@ -9,7 +9,7 @@ return(
               const selectedDeliveryOption = deliveryOptions.find(
                 (deliveryOption) => {
                   return deliveryOption.id === item.deliveryOptionId;
-                },
+                },  
               );
               return (
                 <div className="cart-item-container" key={item.productId}>
