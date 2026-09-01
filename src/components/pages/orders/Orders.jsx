@@ -6,14 +6,13 @@ import BuyAgainIcon from "../../../assets/images/icons/buy-again.png"
 import { formatMoney } from "../../../utils/Formart-money";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
-function Orders({items}) {
+function Orders({items, loadCart}) {
  const [orders, setOrders] = useState([]);
  useEffect(() => {
   const getData = async ()=>{const response = await axios.get("/api/orders?expand=products")
      setOrders(response.data);}
    getData();
  }, []);
-
 
 
 
@@ -64,9 +63,13 @@ function Orders({items}) {
               <div className="product-quantity">
                 Quantity: {orderProducts.quantity}
               </div>
-              <button className="buy-again-button button-primary">
+              <button className="buy-again-button button-primary" onClick={async() => {
+                 await axios.post('/api/cart-items',{ productId : orderProducts.productId,
+                  quantity :1
+                 })
+                 await loadCart()}}>
                 <img className="buy-again-icon" src={BuyAgainIcon} />
-                <span className="buy-again-message">Add to Cart</span>
+                <span className="buy-again-message" >Add to Cart</span>
               </button>
             </div>
 
