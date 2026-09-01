@@ -55,7 +55,7 @@ function Checkout({ items  , loadCart}) {
           <div className="order-summary">
             <Deliveryoption deliveryOptions={deliveryOptions} items={items} loadCart={loadCart} />
           </div>
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary}loadCart={loadCart}/>
         </div>
       </div>{" "}
     </>
