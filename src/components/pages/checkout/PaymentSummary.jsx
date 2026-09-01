@@ -1,7 +1,8 @@
 import { formatMoney } from "../../../utils/Formart-money";
 function PaymentSummary ({paymentSummary}){
-
+console.log(paymentSummary);
   return(<>
+  
          {paymentSummary && (  <> 
                 <div className="payment-summary"> 
             <div className="payment-summary-title">Payment Summary</div>
