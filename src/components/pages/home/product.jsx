@@ -3,6 +3,7 @@ import { formatMoney } from "../../../utils/Formart-money"
 import axios from "axios"
 function Product({ product , loadCart}){
     const [quantity, setQuantity] = useState(1);
+    const [addedMsg,setaddedMsg] = useState(false)
     const addCartQuantiy = (e)=>{
               setQuantity(Number(e.target.value))
             };
@@ -13,8 +14,13 @@ function Product({ product , loadCart}){
                
             });
            await loadCart();
+           setaddedMsg(true)
           };
-
+if(addedMsg){
+setTimeout(()=>{
+  setaddedMsg(false)
+} , 2000)
+}
  return (<>
  <div className="product-container"
        key={product.id} >
@@ -23,7 +29,7 @@ function Product({ product , loadCart}){
             <img className="product-image"
               src={product.image} />
           </div>
-
+  
           <div className="product-name limit-text-to-2-lines">
             {product.name}
           </div>
@@ -60,7 +66,9 @@ function Product({ product , loadCart}){
 
           <div className="product-spacer"></div>
 
-          <div className="added-to-cart">
+          <div className="added-to-cart" 
+          style={{opacity : addedMsg ? 1:0}}
+          > 
             <img src="images/icons/checkmark.png" />
             Added
           </div>
@@ -74,4 +82,4 @@ function Product({ product , loadCart}){
  
  </>)
 }
-export default Product;
+export default Product; 

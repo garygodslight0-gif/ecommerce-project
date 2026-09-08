@@ -13,8 +13,7 @@ function Orders({items, loadCart}) {
      setOrders(response.data);}
    getData();
  }, []);
-
-
+window.axios= axios;
 
  return ( <>
  <Header items={items} />  

@@ -9,6 +9,9 @@ import Tracking from "./components/pages/tracking/Tracking";
 import NotFound from "./components/pages/404";
 
 function App() {
+  
+
+  
       const loadCart = async () => {
       const response = await axios.get("/api/cart-items?expand=product");
       setItems(response.data);
