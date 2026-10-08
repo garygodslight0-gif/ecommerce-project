@@ -1,11 +1,14 @@
 
-import {  NavLink } from "react-router-dom"
+import {  NavLink } from "react-router"
 import LogoWhite from "../assets/images/logo-white.png"
 import Logo from "../assets/images/logo.png"
 import SearchIcon from "../assets/images/icons/search-icon.png"  
 import Cart from "../assets/images/icons/cart-icon.png"
-
+import { useState } from "react"
+import { useNavigate } from "react-router"
 function Header({ items }) {
+const [searchInput, setSearchInput] = useState("")
+const navigate = useNavigate()
   let totalQuantity = 0;
   items.forEach((item) => {
     totalQuantity += item.quantity
@@ -26,9 +29,15 @@ function Header({ items }) {
       </div>
 
       <div className="middle-section">
-        <input className="search-bar" type="text" placeholder="Search" />
+        <input className="search-bar" type="text" placeholder="Search"
+         value={searchInput}
+         onChange={(e) => setSearchInput(e.target.value)}
+        />
 
-        <button className="search-button">
+        <button className="search-button"
+        onClick={()=>{
+          navigate(`/?search=${searchInput}`)
+        }}>
           <img className="search-icon" src={SearchIcon} />
         </button>
       </div>
