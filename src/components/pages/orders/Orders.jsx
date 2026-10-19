@@ -3,7 +3,7 @@ import './orders.css';
 import  axios  from "axios";
 import { useEffect, useState ,Fragment } from "react";
 import BuyAgainIcon from "../../../assets/images/icons/buy-again.png"
-import { formatMoney } from "../../../utils/Formart-money";
+import { formatMoney } from "../../../utils/format-money";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 function Orders({items, loadCart}) {
