@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatMoney } from "../../../utils/format-money"
+import { formatMoney } from "../../../utils/Format-money"
 import axios from "axios"
 function Product({ product , loadCart}){
     const [quantity, setQuantity] = useState(1);
@@ -27,6 +27,7 @@ setTimeout(()=>{
           <div className="product-image-container"
            >
             <img className="product-image"
+            data-testId="product-image"
               src={product.image} />
           </div>
   
@@ -36,6 +37,7 @@ setTimeout(()=>{
 
           <div className="product-rating-container">
             <img className="product-rating-stars"
+            data-testId = "product-rating-stars"
               src={`images/ratings/rating-${product.rating.stars*10}.png`} />
             <div className="product-rating-count link-primary">
               {product.rating.count}
