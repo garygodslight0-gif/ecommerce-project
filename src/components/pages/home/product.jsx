@@ -24,11 +24,11 @@ setTimeout(()=>{
  return (<>
  <div className="product-container"
        key={product.id} 
-       data-testId="product-container" >
+       data-testid="product-container" >
           <div className="product-image-container"
            >
             <img className="product-image"
-            data-testId="product-image"
+            data-testid="product-image"
               src={product.image} />
           </div>
   
@@ -53,6 +53,7 @@ setTimeout(()=>{
             <select
             value={quantity}
             onChange={addCartQuantiy}
+            data-testid="product-quantity-container"
             >
               <option value="1">1</option>
               <option value="2">2</option>

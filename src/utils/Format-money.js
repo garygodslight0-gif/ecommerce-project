@@ -1,3 +1,7 @@
 export function formatMoney(amount) {
-    return `$${ (amount / 100).toFixed(2) }`
-}      
+    if (amount > -1) {
+        return `$${(amount / 100).toFixed(2)}`;
+    } else {
+        return `-$${(Math.abs(amount) / 100).toFixed(2)}`;
+    }
+}

@@ -1,7 +1,7 @@
 import { it, expect ,describe } from "vitest";
 
-import { formatMoney } from "./format-money";
-describe ('formarMoney',( )=>{
+import { formatMoney } from "./Format-money";
+describe ('formatMoney',( )=>{
 it ('formats 199 cents as $19.99', ()=>{
 
 expect(formatMoney(1999)).toBe('$19.99')
@@ -11,5 +11,10 @@ it('displays 2 decimals ', ()=>{
     expect(formatMoney(2000)).toBe('$20.00');
     expect (formatMoney(100)).toBe('$1.00');
 });
-
+it ('formarts 0 as $0.00',()=>{
+    expect (formatMoney(0)).toBe('$0.00')
+})
+it ('formarts -100 as -$1.00', ()=>{
+    expect(formatMoney(-100)).toBe('-$1.00')
+})
 });
