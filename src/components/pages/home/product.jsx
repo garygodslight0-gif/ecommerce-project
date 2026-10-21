@@ -23,7 +23,8 @@ setTimeout(()=>{
 }
  return (<>
  <div className="product-container"
-       key={product.id} >
+       key={product.id} 
+       data-testId="product-container" >
           <div className="product-image-container"
            >
             <img className="product-image"
