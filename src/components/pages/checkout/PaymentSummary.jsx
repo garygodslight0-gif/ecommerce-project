@@ -1,5 +1,5 @@
 
-import { formatMoney } from "../../../utils/format-money";
+import { formatMoney } from "../../../utils/Format-money";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
