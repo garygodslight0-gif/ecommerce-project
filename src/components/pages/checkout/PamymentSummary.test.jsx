@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import PaymentSummay from "./PaymentSummary";
-import { formatMoney } from "../../../utils/Format-money";
+import { formatMoney } from "../../../utils/format-money";
 import { within } from "@testing-library/dom";
 import axios from "axios";
 import userEvent from "@testing-library/user-event";
